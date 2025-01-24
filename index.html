@@ -1,0 +1,197 @@
+// This file provides a brief overview of basic JavaScript concepts such as math operations, string handling, array manipulation, conditional statements, loops, and functions. Each section demonstrates a fundamental JavaScript feature with practical examples.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+// Button to display the current date and time on hover
+
+<button onmouseover="getElementById('currentDateTime').innerHTML=Date()">Time</button>
+
+<p id="divisionResult"></p>
+<p id="incrementResult"></p>
+<p id="decrementResult"></p>
+<p id="finalIncrementResult"></p>
+<p id="calculationResult"></p>
+<p id="personDetails"></p>
+<p id="stringHandling"></p>
+<p id="stringLength"></p>
+<p id="randomNumbers"></p>
+<p id="minMaxValues"></p>
+<p id="roundingExamples"></p>
+<p id="fruitExamples"></p>
+<p id="arrayToString"></p>
+<p id="arrayAfterPop"></p>
+<p id="arrayAfterShift"></p>
+<p id="arrayAfterPush"></p>
+<p id="arrayAfterUnshift"></p>
+<p id="arrayManipulation"></p>
+<p id="sortedArray"></p>
+<p id="reversedArray"></p>
+<p id="combinedArrays"></p>
+<p id="conditionalExample"></p>
+<p id="comparisonExample"></p>
+<p id="loopOutput"></p>
+<p id="objectIteration"></p>
+<p id="functionExample"></p>
+<p id="currentDateTime"></p>
+
+<script>
+
+
+    // Basic division example
+    var divisionResult = 100 / 50;
+    document.getElementById("divisionResult").innerHTML = divisionResult;
+
+
+    // Incrementing a variable and displaying the result
+    var number = 5;
+    number++;
+    var number2 = number;
+    document.getElementById("incrementResult").innerHTML = number2;
+
+
+    // Decrementing a variable and displaying the result
+    var number4 = 5;
+    number4--;
+    var number5 = number4;
+    document.getElementById("decrementResult").innerHTML = number5;
+
+
+    // Incrementing a variable again for demonstration
+    var number6 = 35
+    number6++;
+    var number7 = number6
+    document.getElementById("finalIncrementResult").innerHTML = number7;
+
+
+    // Performing a math operation and displaying the result
+    document.getElementById("calculationResult").innerHTML = (50 + 200) * 3;
+
+
+    // Working with objects
+    var person = { firstName: "John", lastName: "Smith", age: 60, eyeColor: "blue" };
+    document.getElementById("personDetails").innerHTML = person.firstName + " has " + person.eyeColor + " eyes.";
+
+
+    // Handling strings with quotes
+    var studentName1 = 'John "Smith"';
+    var studentName2 = "\"Roy\" 'Martin'";
+    document.getElementById("stringHandling").innerHTML = studentName1 + "<br>" + studentName2;
+    
+    
+    // Finding string length
+    var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    document.getElementById("stringLength").innerHTML = alphabet.length;
+
+
+    // Generating random numbers
+    document.getElementById("randomNumbers").innerHTML = Math.random() + "<br>" + Math.floor(Math.random() * 10);
+
+
+    // Finding minimum and maximum values
+    document.getElementById("minMaxValues").innerHTML = Math.min(600, 300, 50, 75, -5, -150) + "<br>" + Math.max(600, 300, 50, 75, -5, -150);
+
+
+    // Demonstrating rounding methods
+    document.getElementById("roundingExamples").innerHTML = Math.round(15.4) + " " + Math.round(15.6) + " " + Math.floor(15.6) + " " + Math.ceil(15.6);
+
+
+    // Working with arrays
+    var fruits = ["Apple", "Orange", "Pear", "Grape", "Tangerine", "Mango"];
+    document.getElementById("fruitExamples").innerHTML = fruits[0] + " " + fruits[Math.floor(Math.random() * fruits.length)];
+
+    
+    // Converting array to string and joining with custom separator
+    document.getElementById("arrayToString").innerHTML = fruits.toString() + "<br>Or separated with \"*\": " + fruits.join(" * ") + "<br>Type of fruits.length is: " + typeof fruits.length;
+
+
+    // Array operations: pop and shift
+    fruits.pop();
+    document.getElementById("arrayAfterPop").innerHTML = fruits;
+    fruits.shift();
+    document.getElementById("arrayAfterShift").innerHTML = fruits;
+
+
+    // Array operations: push and unshift
+    fruits.push("Cherry");
+    document.getElementById("arrayAfterPush").innerHTML = fruits;
+    fruits.unshift("Banana");
+    document.getElementById("arrayAfterUnshift").innerHTML = fruits;
+
+
+    // Manipulating array elements
+    fruits[0] = "Kiwi";
+    delete fruits[2];
+    fruits.splice(2, 0, "Lemon", "Red Apple");
+    document.getElementById("arrayManipulation").innerHTML = fruits;
+
+
+    // Sorting and reversing arrays
+    fruits.sort();
+    document.getElementById("sortedArray").innerHTML = fruits;
+    fruits.reverse();
+    document.getElementById("reversedArray").innerHTML = fruits;
+
+
+    // Combining arrays
+    var girls = ["Julie", "Samantha", "Laura", "Jill"];
+    var boys = ["Bob", "Joe", "Walt", "Sam", "Fred"];
+    var combined = girls.concat(boys);
+    document.getElementById("combinedArrays").innerHTML = combined;
+
+
+    // Conditional statements to grade a score
+    var score = 80;
+    if (score < 50) {
+        document.getElementById("conditionalExample").innerHTML = "F";
+    } else if (score < 70) {
+        document.getElementById("conditionalExample").innerHTML = "D";
+    } else if (score < 80) {
+        document.getElementById("conditionalExample").innerHTML = "C";
+    } else if (score < 90) {
+        document.getElementById("conditionalExample").innerHTML = "B";
+    } else if (score < 100) {
+        document.getElementById("conditionalExample").innerHTML = "A";
+    }
+        // else statements instruct the script what to do if none of the preceding conditions are met.
+    else (
+        document.write("Score must be less than 100.")
+    )
+
+    
+   // Comparison example
+   var comparison = 6;
+    document.getElementById("comparisonExample").innerHTML = (comparison != 6);
+
+
+    // Loop example
+    var count;
+    for(count = 0; count <= 10; count++) {
+        document.write( count );
+        document.write("<br />");
+    }
+
+
+
+    // Iterating over object properties
+    var personDetails = { fname: "John", lname: "Smith", age: 30 };
+    var details = "";
+    person_att; 
+    for (person_att in personDetails) {
+        details += personDetails[person_att] + " ";
+    }
+    document.getElementById("objectIteration").innerHTML = details;
+
+
+    // Function example
+    function multiplyNumbers(a, b) {
+        return a * b;
+    }
+    document.getElementById("functionExample").innerHTML = multiplyNumbers(80, 2);
+
+
+</script>
+</body>
+</html>
